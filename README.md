@@ -1,1 +1,147 @@
-# To-Do-application
+## Ex03 To-Do List using JavaScript
+## Date:17.11.2026
+## Name: T. Hudaifa Mahzumia
+## Reg No: 212224040119
+
+## AIM
+To create a To-do Application with all features using JavaScript.
+
+## ALGORITHM
+### STEP 1
+Build the HTML structure (index.html).
+
+### STEP 2
+Style the App (style.css).
+
+### STEP 3
+Plan the features the To-Do App should have.
+
+### STEP 4
+Create a To-do application using Javascript.
+
+### STEP 5
+Add functionalities.
+
+### STEP 6
+Test the App.
+
+### STEP 7
+Open the HTML file in a browser to check layout and functionality.
+
+### STEP 8
+Fix styling issues and refine content placement.
+
+### STEP 9
+Deploy the website.
+
+### STEP 10
+Upload to GitHub Pages for free hosting.
+
+## PROGRAM
+## index.html
+```
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>My To-Do List</h1>
+
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+## script.js
+```
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let task = input.value;
+
+    if (task === "") {
+        alert("Please enter a task");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.innerHTML = task;
+
+    li.onclick = function() {
+        li.style.textDecoration = "line-through";
+    };
+
+    let deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "Delete";
+
+    deleteBtn.onclick = function(event) {
+        event.stopPropagation();
+        li.remove();
+    };
+
+    li.appendChild(deleteBtn);
+    document.getElementById("taskList").appendChild(li);
+
+    input.value = "";
+}
+```
+## style.css
+```
+
+body {
+    font-family: Arial;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 60%;
+}
+
+button {
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+li {
+    background: lightgray;
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+}
+
+li button {
+    background: red;
+    margin-left: 10px;
+}
+```
+
+
+
+## OUTPUT
+![alt text](image.png)
+
+
+## RESULT
+The program for creating To-do list using JavaScript is executed successfully.#
